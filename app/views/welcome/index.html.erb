@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="https://rawgithub.com/krzysztofbialek/Rails-Girls-Warsaw-App/master/style.css" />
   </head>
   <body>
-	<h1>My Rails Boys and Girls Diary</h1>
+		<h1>My Rails Boys and Girls Diary</h1>
 	  <div>
-	    <h2>Submitted a Rails Boys and Girls application</h2>
-	      <p>1.02.2014</p>
-	      <p>Just submitted an application to a Rails Boys and Girls workshop. Can’t wait to see whether I’ll get in!</p>
-	      <h2>Got in!</h2>
-	      <p>15.02.2014</p>
-	      <p>Received an email that my application got accepted! I’ll be at a RG workshop next week!</p>
-	    <h2>The first day starts…</h2>
-	      <p>22.02.2014</p>
-	      <p>Today is the first day of the Rails boys and girls workshop. My coach is quite strange but it seems we all have Rails installed now and can start learning.</p>
+	    <% for entry in @entries %>
+	    	<h2><%= entry.title %></h2>
+	    		<p><%= entry.date %></p>
+	    		<p><%= entry.contents %></p>
+	    <% end %>
 	  </div>
-   </body>
+	  <div>
+  		<h1>My favourite websites</h1>
+  		<ul>
+	    	<% for url, name in @websites %>
+	      	<li><a href="<%= url %>"><%= name %></a></li>
+	      <% end %>
+	    </ul>
+	  </div>
+  	<img src="http://railsgirls.com/images/rg-warsaw.png" />
+  </body>
 </html>
