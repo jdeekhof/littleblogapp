@@ -1,13 +1,22 @@
-
+<div class = "container">
+		<% for entry in @entries %>
+			<div class="row">
+		    	<div class="col">
+		    		<h3><%= link_to(entry.title, entry_path(entry)) %></h3>
+		    	</div>
+		    	<div class="col">
+		    		<%= entry.date %>
+		    	</div>
+		    	<div class="col">
+		    		<%= entry.contents %>
+		    	</div>
+		    	<div class="col">
+		    		<%= link_to("Edit", edit_entry_path(entry)) %>
+		    	</div>
+		    </div>
+		<% end %>
+</div>
 <%= link_to("New Entry", new_entry_path) %>
 
-<ul>
-	<% for entry in @entries %>
-	    	<h2><%= link_to(entry.title, entry_path(entry)) %></h2>
-	    	<p><%= entry.date %></p>
-	    	<p><%= entry.contents %></p>
-	    	<p><%= link_to("Edit", edit_entry_path(entry)) %></p>
-	<% end %>
-</ul>
 
 

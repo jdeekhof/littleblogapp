@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Diary</title>
+    <title>Jacob Eekhof</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Jacob Eekhof</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><%= link_to("Home", root_path) %></li>
+                  <li><%= link_to("Blog", entries_path) %></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          
+            <%= yield %>
+          
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Thanks to 
+                <a href="https://getbootstrap.com/">Bootstrap</a>
+                and 
+                <a href="https://railsgirls.com/">Rails Girls</a>
+              for making this easy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
