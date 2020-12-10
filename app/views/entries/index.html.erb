@@ -6,6 +6,7 @@
 	    	<h2><%= link_to(entry.title, entry_path(entry)) %></h2>
 	    	<p><%= entry.date %></p>
 	    	<p><%= entry.contents %></p>
+	    	<p><%= link_to("Edit", edit_entry_path(entry)) %></p>
 	<% end %>
 </ul>
 
