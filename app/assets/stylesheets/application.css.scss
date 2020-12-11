@@ -90,7 +90,11 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.masthead-nav {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .masthead-nav > li {
   display: inline-block;
 }
@@ -119,7 +123,7 @@ body {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .masthead-brand {
     float: left;
   }
@@ -142,8 +146,10 @@ body {
 }
 
 
+
+
 /*
- * Footer
+ * Footer.
  */
 
 .mastfoot {
@@ -153,10 +159,10 @@ body {
 
 
 /*
- * Affix and center
+ * Affix and position
  */
 
-@media (min-width: 768px) {
+@media (min-width: 1500px) {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
@@ -178,10 +184,3 @@ body {
   }
 }
 
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
-}
