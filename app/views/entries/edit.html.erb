@@ -1,9 +1,28 @@
-<%= form_for(@entry) do |form| %>
-	<p><%= form.label("title") %></p>
-	<p><%= form.text_field("title") %></p>
-	<p><%= form.label("contents") %></p>
-	<p><%= form.text_area("contents") %></p>
-	<p><%= form.submit %></p>
-<% end %>
-<p><%= link_to("Back to this entry", entries_path(@entry)) %></p>
-<p><%= link_to("Back to all Entries", entries_path) %></p>
+<div display="table-row", class="container">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<%= form_for(@entry) do |form| %>
+				<div class= "field form-group">
+					<h3><%= form.label :title %></h3>
+					<p><%= form.text_field :title, class: 'form-control' %></p>
+				</div>
+				<div class= "field form-group">
+					<h3><%= form.label :contents %></h3>
+					<p><%= form.text_area :contents, class: 'form-control' %></p>
+				</div>
+				<div class= "action form-group">
+					<p style="color:black"><%= form.submit %></p>
+				</div>
+			<% end %>
+		</div>
+	<div class="col-md-3">
+	</div>
+</div>
+<div float="right">
+<ul>
+<li><%= link_to("Back to this entry", entries_path(@entry)) %></li>
+<li><%= link_to("Back to all Entries", entries_path) %></li>
+</ul>
+</div>
