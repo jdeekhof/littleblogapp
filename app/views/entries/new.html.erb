@@ -1,4 +1,4 @@
-<div display="table-row", class="container">
+
 	<div class="row">
 		<div class="col-md-3">
 		</div>
@@ -13,7 +13,7 @@
 					<p><%= form.text_area :contents, class: 'form-control' %></p>
 				</div>
 				<div class= "action form-group">
-					<p style="color:black"><%= form.submit %></p>
+					<%= form.submit class: 'btn btn-primary' %>
 				</div>
 			<% end %>
 		</div>
@@ -24,4 +24,3 @@
 <ul>
 <li><%= link_to("Back to all Entries", entries_path) %></li>
 </ul>
-</div>
