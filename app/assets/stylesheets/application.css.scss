@@ -83,6 +83,7 @@ body {
 }
 
 
+
 /*
  * Header
  */
@@ -136,6 +137,8 @@ body {
   padding: 10px 20px;
   font-weight: bold;
 }
+
+
 
 * {box-sizing:border-box}
 
@@ -247,6 +250,7 @@ body {
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
+  float: right;
 }
 
 
@@ -260,6 +264,9 @@ body {
   }
   .masthead-nav {
     float: right;
+  }
+  .mastfoot {
+  float:right;
   }
 }
 
