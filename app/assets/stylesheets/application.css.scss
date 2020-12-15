@@ -243,6 +243,7 @@ body {
 
 
 
+
 /*
  * Footer.
  */
@@ -250,7 +251,6 @@ body {
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
-  float: right;
 }
 
 
@@ -260,13 +260,10 @@ body {
 
 @media (min-width: 1500px) {
   .masthead-brand {
-    float: left;
+    
   }
   .masthead-nav {
     float: right;
-  }
-  .mastfoot {
-  float:right;
   }
 }
 
