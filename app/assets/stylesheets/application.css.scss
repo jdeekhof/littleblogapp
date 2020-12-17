@@ -260,7 +260,7 @@ body {
 
 @media (min-width: 1500px) {
   .masthead-brand {
-    
+    float: left;
   }
   .masthead-nav {
     float: right;
@@ -270,7 +270,7 @@ body {
 @media (min-width: 1500px) {
   /* Pull out the header and footer */
   .masthead {
-    position: absolute;
+    position: fixed;
     top: 0;
   }
   .mastfoot {
