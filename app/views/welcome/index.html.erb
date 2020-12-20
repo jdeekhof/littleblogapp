@@ -1,75 +1,19 @@
 
 
+  <div class="row">
 
-	<h1>Welcome to my site!</h1>
-	<p> My name is Jacob and I made this site to practice full stack development using <a href="https://rubyonrails.org/">Ruby on Rails</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"> HTML5</a> , and <a href="https://getbootstrap.com/">Bootstrap!</a> Normally, this is where people would post a picture of themselves, but I don't have any recent ones so here's a picture of my dogs</p>
-</div>
-<div class="slideshow-container">
+    <div class="col-md-7">
+      <a href="https://karrraska.tumblr.com/", target="_new"><%= image_tag "https://res.cloudinary.com/dqbibdsz3/image/upload/c_crop,w_587/v1608413680/reddit/1537c5ec287fed4ec59a981ece60fc28b67a4849_amrwrp.jpg", class:"img-fluid rounded float-left" %></a>
+    </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <%= image_tag "dogs.png" %>
-    <div class="text">Lucy, Monty, & Daisy</div>
+    
+
+    <div class="col-md-5">
+      <br>
+       <h1>Welcome,</h1>
+       <p> This site was created to practice <a href="https://rubyonrails.org/">Ruby on Rails</a> and various other web development tools. I tried to make it a bit more interesting than using wordpress. Let me know what you think.</p>
+    </div>
+    
   </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <%= image_tag "dogs2.jpeg" %>
-    <div class="text">Daisy & Monty</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <%= image_tag "dogs3.jpg" %>
-    <div class="text">Lucy</div>
-  </div>
-
-  <a class="prev" onclick="slideShowSelector.plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-<div display="table-row", class="container", align="center">
-<p>I enjoy gaming, music, and Dockwa (where I currently am employed). I am constantly seeking new adventures so <%= link_to("feel free to reach out", contact_path) %> if you have one.</p>
-</div>
-
-
-<script type="text/javascript">
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-} 
-
-
-</script>
+	

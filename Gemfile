@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 # Use Twitter Bootstrap library for front-end UI and layout
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '4.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
