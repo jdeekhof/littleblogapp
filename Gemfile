@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 # Use Twitter Bootstrap library for front-end UI and layout
-gem 'bootstrap-sass', '4.5.3'
+gem 'bootstrap', '4.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use Puma as the app server
@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+#Use Devise for authentication
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

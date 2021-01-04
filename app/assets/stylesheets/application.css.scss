@@ -5,7 +5,7 @@ body {
 	size: 18px;
 }
 
-.main-content { 
+nav { 
 	background: rgb(36,0,91);
 	background: linear-gradient(0deg, rgba(36,0,91,1) 4%, rgba(0,0,0,1) 50%);
 	color: white;
@@ -14,7 +14,6 @@ body {
 nav a,
 a:focus,
 a:hover {
-  color: black;
+  color: white;
   font-weight: bold;
 }
-
