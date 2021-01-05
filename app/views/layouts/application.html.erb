@@ -42,18 +42,25 @@
               <%= link_to "Blog", entries_path %>
             </li>
             <li class="nav-item nav-link">
+            <% if admin_signed_in? %>
+              <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
+            <% else %>
               <%= link_to "Log In", new_admin_session_path %>
-            </li>
+            <% end %>
+          </li>
           </ul>
         </div>
       </nav>
-    <% flash.each do |name, msg| %>
-        <div class="alert alert-<%= name %>">
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </div>
-    <% end %>
-    <br>
-    <div class='container-fluid'>
+      <div class="container justify">
+      <% flash.each do |type, msg| %>
+      <% if type == "notice" %>
+        <%= content_tag :div, msg, class: "alert alert-success" %>
+      <% elsif type == "alert" %>
+        <%= content_tag :div, msg, class: "alert alert-danger" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class='container main-content'>
       <%= yield %>
     </div>
   </body>

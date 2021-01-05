@@ -2,12 +2,12 @@
 
 body {
 	font-family: 'Cormorant Garamond', serif;
-	size: 18px;
+	font-size: 18px;
 }
 
 nav { 
 	background: rgb(36,0,91);
-	background: linear-gradient(0deg, rgba(36,0,91,1) 4%, rgba(0,0,0,1) 50%);
+	background: linear-gradient(0deg, rgba(36,0,91,1) 4%, rgba(0,0,0,1) 70%);
 	color: white;
 }
 
@@ -15,5 +15,9 @@ nav a,
 a:focus,
 a:hover {
   color: white;
-  font-weight: bold;
+  padding: 5px;
+}
+
+.main-content{
+	padding-top: 10px;
 }

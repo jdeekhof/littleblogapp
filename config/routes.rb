@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
 	root "welcome#index"
+	devise_for :admins
+	resources :admins
 	resources "entries"
 	get "contact", to: "welcome#contact"
 end
