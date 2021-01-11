@@ -1,5 +1,7 @@
 
-
+<% if admin_signed_in? %>
+    <%= link_to("New Entry", new_entry_path, class: 'new-post btn btn-success') %>
+<% end %>
 
 <% for entry in @entries %>
 	<div class="row">
@@ -19,7 +21,6 @@
     <br>
 <% end %>
 
-<%= link_to("New Entry", new_entry_path, class: 'btn btn-success') %>
 
 
 
