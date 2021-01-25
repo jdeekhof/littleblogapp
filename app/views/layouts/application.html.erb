@@ -4,9 +4,11 @@
     <title>Jacob Eekhof</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://kit.fontawesome.com/f64ecfb92d.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -19,7 +21,7 @@
   </head>
 
   <body>
-      <nav id= "mySideNav" class="sidenav navbar-expand-md navbar-light">
+      <nav id= "mySideNav" class="sidenav navbar-expand-md navbar-dark">
 
         <%= link_to "Jacob Eekhof", root_path , class:"brand"%>
 
@@ -34,11 +36,7 @@
         <div>
           <a href="#" class="nav-link">About</a>
           <%= link_to "Blog", entries_path, class:"nav-link" %></a>
-          <% if admin_signed_in? %>
-              <%= link_to "Log Out", destroy_admin_session_path, method: :delete, class:"nav-link" %>
-            <% else %>
-              <%= link_to "Log In", new_admin_session_path, class:"nav-link" %>
-          <% end %>
+          
         </div>
         <div class="social-links"> 
            <a href="https://github.com/jdeekhof", target="_new"><i class="fab fa-github"></i></a>
@@ -48,32 +46,63 @@
            <a href="mailto:jdeekhof@gmail.com", target="_new"><i class="fas fa-envelope-open-text"></i></a>
            
            <a href="https://www.linkedin.com/in/jacobeekhof/", target="_new"><i class="fab fa-linkedin-in"></i></a>
-
+      
         </div>
       </nav>
-
-      <div class="container justify">
-      <% flash.each do |type, msg| %>
-      <% if type == "notice" %>
-        <%= content_tag :div, msg, class: "alert alert-success" %>
-      <% elsif type == "alert" %>
-        <%= content_tag :div, msg, class: "alert alert-danger" %>
+      <div class='main' id="main">
+        <nav class="navbar bg-light">
+          <div class="menuToggler open" onclick="iconAnimate(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div> 
+            <% if admin_signed_in? %>
+                <%= link_to "Log Out", destroy_admin_session_path, method: :delete, class:"btn btn-danger" %>
+              <% else %>
+                <%= link_to "Log In", new_admin_session_path, class:"btn btn-success" %>
+            <% end %>
+          </nav> 
+              <div class='container main-content'>
+         <div class="container">
+        <% flash.each do |type, msg| %>
+        <% if type == "notice" %>
+          <%= content_tag :div, msg, class: "alert alert-success" %>
+        <% elsif type == "alert" %>
+          <%= content_tag :div, msg, class: "alert alert-danger" %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <div class='container main-content' id="main">
-      <%= yield %>
+      </div>
+        <%= yield %>
+      </div>
     </div>
   </div>
+
   <script type="text/javascript">
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      nav =  document.getElementById('mySideNav')
+      main = document.getElementById('main')
+      nav.style.width = "250px";
+      main.style.marginLeft = "250px";
     }
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
+      nav =  document.getElementById('mySideNav')
+      main = document.getElementById('main')
+      nav.style.width = "0";
+      main.style.marginLeft = "0";
     }
+    function iconAnimate(x) {
+        
+        if (x.classList.length > 1){
+          x.classList.toggle("open");
+          console.log("close nav");
+          closeNav()
+        }
+        else{
+        x.classList.toggle("open");
+        console.log("open nav");
+        openNav() 
+      }}
+
   </script>
   </body>
 </html>

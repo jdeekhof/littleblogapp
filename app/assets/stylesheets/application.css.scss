@@ -1,8 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 
 body {
-	font-family: 'Cormorant Garamond', serif;
-	font-size: 18px;
+	font-family: 'Fraunces', serif;
+	font-size: 16px;
 }
 
 .sidenav {
@@ -14,7 +14,7 @@ body {
   left: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  padding-top: 30px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   background: rgb(36,0,91);
   background: linear-gradient(0deg, rgba(36,0,91,1) 4%, rgba(0,0,0,1) 70%);
@@ -36,7 +36,7 @@ body {
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: grey;
 }
 
 
@@ -54,7 +54,6 @@ body {
 
 
 .main-content{
-	margin-left: 250px;
 	padding-top: 10px;
 	display: flex-grid;
   	padding: 20px;
@@ -64,4 +63,44 @@ body {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 10px;
+}
+
+.social-links a{
+	margin: 5px;
+}
+
+.main{
+	margin-left: 250px;
+	align-items: center;
+}
+
+
+.menuToggler {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-7px, 5px) ;
+  transform: rotate(-45deg) translate(-7px,5px) ;
+}
+
+/* Fade out the second bar */
+.open .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-7px, -5px) ;
+  transform: rotate(45deg) translate(-7px, -5px) ;
 }
