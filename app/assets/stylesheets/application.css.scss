@@ -23,6 +23,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 /* The navigation menu links */
@@ -31,8 +32,8 @@ body {
   font-size: 25px;
   color: white;
   transition: 0.3s;
+  justify-self: center;
 }
-
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
@@ -43,7 +44,6 @@ body {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
-  padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -53,10 +53,9 @@ body {
 }
 
 
-.main-content{
+.content{
 	padding-top: 10px;
 	display: flex-grid;
-  	padding: 20px;
 }
 
 .new-post{
@@ -71,7 +70,12 @@ body {
 
 .main{
 	margin-left: 250px;
-	align-items: center;
+	padding: 0px;
+}
+
+.main nav{
+	border-bottom: solid;
+	
 }
 
 
@@ -103,4 +107,11 @@ body {
 .open .bar3 {
   -webkit-transform: rotate(45deg) translate(-7px, -5px) ;
   transform: rotate(45deg) translate(-7px, -5px) ;
+}
+
+.post-form {
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }

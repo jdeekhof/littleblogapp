@@ -4,7 +4,7 @@
 		</div>
 		<div class="col-md-6">
 			<%= form_for(Entry.new) do |form| %>
-				<div class= "field form-group">
+				<div class= "field form-group post-form">
 					<h3><%= form.label :title %></h3>
 					<p><%= form.text_field :title, class: 'form-control' %></p>
 				</div>
@@ -16,10 +16,11 @@
 					<%= form.submit class: 'btn btn-primary' %>
 				</div>
 			<% end %>
+			<%= link_to("Back to all Entries", entries_path, class: "btn btn-danger") %>
 		</div>
 	<div class="col-md-3">
 	</div>
 </div>
 
-<br>
-<%= link_to("Back to all Entries", entries_path, class: "btn btn-danger") %>
+
+
