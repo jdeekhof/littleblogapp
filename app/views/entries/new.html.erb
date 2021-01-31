@@ -4,19 +4,25 @@
 		</div>
 		<div class="col-md-6">
 			<%= form_for(Entry.new) do |form| %>
-				<div class= "field form-group post-form">
-					<h3><%= form.label :title %></h3>
-					<p><%= form.text_field :title, class: 'form-control' %></p>
-				</div>
-				<div class= "field form-group">
-					<h3><%= form.label :contents %></h3>
-					<p><%= form.text_area :contents, class: 'form-control' %></p>
-				</div>
-				<div class= "action form-group">
-					<%= form.submit class: 'btn btn-primary' %>
+				<div class="post-form">
+					<div class= "field form-group">
+						<h3><%= form.label :title %></h3>
+						<p><%= form.text_field :title, class: 'form-control' %></p>
+					</div>
+					<div class= "field form-group">
+						<h3><%= form.label :date %></h3>
+						<p><%= form.date_field :date, class: 'form-control', placeholder: 'MM/DD/YYYY' %></p>
+					</div>
+					<div class= "field form-group">
+						<h3><%= form.label :contents %></h3>
+						<p><%= form.text_area :contents, class: 'form-control' %></p>
+					</div>
+					<div class= "action form-group">
+						<%= form.submit class: 'btn btn-primary' %>
+					</div>
+					<%= link_to("Back to all Entries", entries_path, class: "btn btn-danger") %>
 				</div>
 			<% end %>
-			<%= link_to("Back to all Entries", entries_path, class: "btn btn-danger") %>
 		</div>
 	<div class="col-md-3">
 	</div>
