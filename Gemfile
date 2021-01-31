@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 #Use Devise for authentication
 gem 'devise'
 
+#Use Will_Paginate for pagination
+gem 'will_paginate', '~> 3.1.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

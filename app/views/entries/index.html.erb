@@ -1,8 +1,8 @@
-<% for entry in @entries %>
+<% for entry in  @entries %>
 	<div class="row">
         <div class="col-md-1"> 
         </div>
-    	<div class="col-md-10">
+    	<div class="col-md-10 card card-body bg-light">
     		<h3><%= link_to(entry.title, entry_path(entry)) %></h3>
             <h6><%= entry.date %></h6>
             <%= entry.contents %>
@@ -18,9 +18,14 @@
     <br>
 <% end %>
 
-
-
-
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="page_info">
+      <%= page_entries_info @entries %>
+    </div>
+    <div>
+         <%= will_paginate @entries, :container => false %>
+    </div>
+  </div>
 
 
 
