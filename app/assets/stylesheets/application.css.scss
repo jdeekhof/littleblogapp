@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 }
 
@@ -46,10 +46,12 @@ body {
   transition: margin-left .5s;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+
+@media screen and (max-width: 450px) {
+  .sidenav {width: 0px}
+  .main{
+  margin-left: 0px;
+}
 }
 
 
