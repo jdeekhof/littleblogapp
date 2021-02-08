@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
+	
 	def index
-		@entries = Entry.paginate(page: params[:page], per_page: 5)
+		@entries = Entry.order(date: :desc).paginate(page: params[:page], per_page: 5)
 	end
 	def create
 		entry_params = params["entry"].permit("title", "date","contents")
