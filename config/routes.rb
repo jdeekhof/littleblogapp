@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 	devise_for :admins
 	resources :admins
 	resources "entries"
-	get "contact", to: "welcome#contact"
+	get "about", to: "welcome#about"
 end
