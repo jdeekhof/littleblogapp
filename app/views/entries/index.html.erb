@@ -5,7 +5,7 @@
     	<div class="col-md-10 card card-body bg-light">
     		<h3><%= link_to(entry.title, entry_path(entry)) %></h3>
             <h6><%= entry.date %></h6>
-            <%= entry.contents %>
+            <%= markdown(entry.contents) %>
     	</div>
     	
     	<% if admin_signed_in? %>  

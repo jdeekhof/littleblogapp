@@ -2,8 +2,8 @@
 
 one:
   tag: one
-  entries: one
+  entry: one
 
 two:
   tag: two
-  entries: two
+  entry: two

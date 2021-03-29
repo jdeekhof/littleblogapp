@@ -1,12 +1,19 @@
 
 <h2><%= @entry.title %></h2>
 <p><%= @entry.date %></p>
-<p><%= @entry.contents %></p>
+<p><%= markdown(@entry.contents) %></p>
+<li>
+	<% for tag in @tags %>
+		<ul> <%= tag.name %></ul>
+	<% end %>
+</li>
 
 <br>
 <% if admin_signed_in? %>  
-    	   <div class="col-md-1">      
+    	   <div class="col-md-4">      
     		  <%= link_to("Edit", edit_entry_path(@entry.id), class: 'btn btn-warning') %>
             </div>
 <% end %>
-<%= link_to("Back to all Entries", entries_path, class: "btn btn-danger")%>
+<div class="col-md-4">
+<%= link_to("Back to all Entries", entries_path(@entry), class: "btn btn-danger")%>
+</div>

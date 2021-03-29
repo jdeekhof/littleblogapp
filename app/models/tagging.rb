@@ -1,10 +1,4 @@
-class CreateTaggings < ActiveRecord::Migration[5.0]
-  def change
-    create_table :taggings do |t|
-      t.belongs_to :tag, foreign_key: true
-      t.belongs_to :entry, foreign_key: true      
-
-      t.timestamps
-    end
-  end
+class Tagging < ApplicationRecord
+  belongs_to :tag
+  belongs_to :entry
 end

@@ -27,6 +27,9 @@ gem 'devise'
 #Use Will_Paginate for pagination
 gem 'will_paginate', '~> 3.1.0'
 
+#Use Redcarpet for markdown
+gem "redcarpet"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
