@@ -3,6 +3,7 @@
 body {
 	font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
+  background: light;
 }
 
 .sidenav {
@@ -119,4 +120,10 @@ body {
 
 .action {
   align-self: center;
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

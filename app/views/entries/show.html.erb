@@ -1,20 +1,20 @@
 <div class="row">
-	<div class="col-md-8 offset-md-2">
+	<div class="col-md-10 offset-md-1 card card-body bg-light">
 		<h1><%= @entry.title %></h1>
-		<p><%= @entry.date %></p>
-		<p><%= markdown(@entry.contents) %></p>
-	</div>
+		<p><%= @entry.date %></p>	
+			<p><%= markdown(@entry.contents) %></p>
+		</div>
 	<% if admin_signed_in? %>  
-	    	   <div class="col-md-2">      
+	    	   <div class="col-md-1">      
 	    		  <%= link_to("Edit", edit_entry_path(@entry.id), class: 'btn btn-warning') %>
 	            </div>
 	<% end %>
 
 	<br>
-	<div class="col-md-4 offset-md-2">
+	<div class="col-md-4 offset-md-1">
 		<h5> Back to Category:</h5>
 		<% for tag in @tags %>
-			<%= link_to "Work ", entries_path(:tag =>  tag.name), class:"btn btn-info" %></a>
+			<%= link_to tag.name, entries_path(:tag =>  tag.name), class:"btn btn-light" %></a>
 		<% end %>
 	</div>
 </div>

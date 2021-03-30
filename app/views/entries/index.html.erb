@@ -1,11 +1,21 @@
+
 <% for entry in  @entries %>
 	<div class="row">
         <div class="col-md-1"> 
         </div>
-    	<div class="col-md-10 card card-body bg-light">
-    		<h3><%= link_to(entry.title, entry_path(entry)) %></h3>
-            <h6><%= entry.date %></h6>
+    	<div class="col-md-10 card card-body bg-light entry">
+            <div class="col-md-3">
+            <h1><%= link_to(entry.title, entry_path(entry)) %></h1>
+        </div>
+        <div class="col-md-5">
             <%= markdown(entry.contents) %>
+        </div>
+        <div class="col-md-2">
+            <h6><%= entry.date %></h6>
+        </div>
+        <div class="col-md-2">
+            <h6><%= entry.all_tags%></h6>
+        </div>
     	</div>
     	
     	<% if admin_signed_in? %>  

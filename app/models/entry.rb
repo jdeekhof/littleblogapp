@@ -12,4 +12,12 @@ class Entry < ApplicationRecord
 	def self.tags_on_entry(entry_id)
 		Tag.where(id: Entry.find_by_id(entry_id).tag_ids)
 	end
+	def all_tags=(names)
+	  self.tags = names.split(",").map do |name|
+	      Tag.where(name: name.strip).first_or_create!
+    	end
+    end
+	def all_tags
+	  self.tags.map(&:name).join(", ")
+	end
 end
