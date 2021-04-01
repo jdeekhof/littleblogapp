@@ -66,4 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   # Use postgresql for Production
   gem 'pg', '1.2.3'
+  #Use aws for Active storage production
+  gem "aws-sdk-s3"
 end

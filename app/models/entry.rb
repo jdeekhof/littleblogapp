@@ -1,6 +1,9 @@
 class Entry < ApplicationRecord
+	has_one_attached :media
 	has_many :taggings
 	has_many :tags, through: :taggings
+
+	#media.attach(params[:media])
 	
 	def self.entry_tagged_with(tag)
 		Tag.find_by(name: tag).entries

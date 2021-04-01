@@ -2,7 +2,10 @@
 	<div class="col-md-10 offset-md-1 card card-body bg-light">
 		<h1><%= @entry.title %></h1>
 		<p><%= @entry.date %></p>	
-			<p><%= markdown(@entry.contents) %></p>
+		<p><%= markdown(@entry.contents) %></p>
+		<% if @entry.media.attached? %>
+			<image src="<%=(url_for(@entry.media)) %>">
+		<% end %>
 		</div>
 	<% if admin_signed_in? %>  
 	    	   <div class="col-md-1">      
