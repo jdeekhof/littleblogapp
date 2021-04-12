@@ -1,29 +1,37 @@
-
+<% title params[:tag] %>
 <% for entry in  @entries %>
 	<div class="row">
-        <div class="col-md-1"> 
-        </div>
-    	<div class="col-md-10 card card-body bg-light entry">
-            <div class="col-md-3">
+    	<div class="col-md-10 offset-md-1 card card-body bg-light">
             <h1><%= link_to(entry.title, entry_path(entry)) %></h1>
-        </div>
-        <div class="col-md-5">
-            <%= markdown(entry.contents) %>
-        </div>
-        <div class="col-md-2">
-            <h6><%= entry.date %></h6>
-        </div>
-        <div class="col-md-2">
-            <h6><%= entry.all_tags%></h6>
-        </div>
-    	</div>
-    	
-    	<% if admin_signed_in? %>  
-    	   <div class="col-md-1">      
-    		  <%= link_to("Edit", edit_entry_path(entry), class: 'btn btn-warning') %>
+            <div class="entry">
+                <div class="col-md-3">
+                <% if entry.media.attached? %>
+                    <image src="<%=(url_for(entry.media)) %>" class="img-thumbnail">
+                <% end %>
             </div>
-        <% end %>
-    	
+
+            <div class="col-md-5">
+                <% if entry.contents.length >=145 %>
+                    <%= markdown("#{entry.contents[0,144]}...") %>
+                    <%= link_to("See more", entry_path(entry)) %>
+                <% else %>
+                    <%= markdown(entry.contents) %>
+                <% end %>
+            </div>
+            <div class="col-md-2">
+                <h6><%= entry.date %></h6>
+            </div>
+            <div class="col-md-2">
+                <h6><%= entry.all_tags%></h6>
+            </div>
+        	</div>
+        	
+        	<% if admin_signed_in? %>  
+        	   <div class="col-md-1">      
+        		  <%= link_to("Edit", edit_entry_path(entry), class: 'btn btn-warning') %>
+                </div>
+            <% end %>
+    	</div>
     </div>
     <br>
 <% end %>

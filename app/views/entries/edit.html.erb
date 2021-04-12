@@ -1,41 +1,38 @@
-
-	<div class="row">
-		<div class="col-md-3">
-		</div>
-		<div class="col-md-6">
-			<%= form_for(@entry) do |form| %>
-				<div class="post-form">
-					<div class= "field form-group">
-						<h3><%= form.label :title %></h3>
-						<p><%= form.text_field :title, class: 'form-control' %></p>
-					</div>
-					<div class= "field form-group">
-						<h3><%= form.label :date %></h3>
-						<p><%= form.date_field :date, class: 'form-control', placeholder: 'MM/DD/YYYY' %></p>
-					</div>
-					<div class= "field form-group">
-						<h3><%= form.label :contents %></h3>
-						<p><%= form.text_area :contents, class: 'form-control' %></p>
-					</div>
-					<div class= "field form-group">
-						<h3><%= form.label :all_tags %></h3>
-						<p><%= form.text_field :all_tags, class: 'form-control' %></p>
-					</div>
-					<div class= "field form-group">
-						<h3><%= form.label :media %></h3>
-						<p><%= form.file_field :media, class: 'form-control' %></p>
-					</div>
-					<div class= "action form-group">
-						<%= form.submit class: 'btn btn-primary' %>
-					</div>
-					<br>
-					<%= link_to("Back to this entry", entry_path(@entry), class: "btn btn-danger") %>
-				</div>
-			<% end %>
-		</div>
-		<div class="col-md-3">
-		</div>
+<% title "Editing #{@entry.title}" %>
+<div class="row">
+	<div class="col-md-3">
 	</div>
-
-
-
+	<div class="col-md-6">
+		<%= form_for(@entry) do |form| %>
+			<div class="post-form">
+				<div class= "field form-group">
+					<h3><%= form.label :title %></h3>
+					<p><%= form.text_field :title, class: 'form-control' %></p>
+				</div>
+				<div class= "field form-group">
+					<h3><%= form.label :date %></h3>
+					<p><%= form.date_field :date, class: 'form-control', placeholder: 'MM/DD/YYYY' %></p>
+				</div>
+				<div class= "field form-group">
+					<h3><%= form.label :contents %></h3>
+					<p><%= form.text_area :contents, class: 'form-control' %></p>
+				</div>
+				<div class= "field form-group">
+					<h3><%= form.label :all_tags %></h3>
+					<p><%= form.text_field :all_tags, class: 'form-control' %></p>
+				</div>
+				<div class= "field form-group">
+					<h3><%= form.label :media %></h3>
+					<p><%= form.file_field :media, class: 'form-control' %></p>
+				</div>
+				<div class= "action form-group">
+					<%= form.submit class: 'btn btn-primary' %>
+				</div>
+				<br>
+				<%= link_to("Back to this entry", entry_path(@entry), class: "btn btn-danger") %>
+			</div>
+		<% end %>
+	</div>
+	<div class="col-md-3">
+	</div>
+</div>

@@ -1,18 +1,19 @@
+<% title @entry.date.to_s %>
 <div class="row">
-	<div class="col-md-10 offset-md-1 card card-body bg-light">
+	<div class="col-md-10 offset-md-1 card card-body bg-light show-entry">
 		<h1><%= @entry.title %></h1>
-		<p><%= @entry.date %></p>	
-		<p><%= markdown(@entry.contents) %></p>
 		<% if @entry.media.attached? %>
-			<image src="<%=(url_for(@entry.media)) %>">
-		<% end %>
+			<image src="<%=(url_for(@entry.media)) %>" class="entry-image">
+		<% end %>	
+		<div>
+			<p class="text-wrap"> <%= markdown(@entry.contents)%> </p>
 		</div>
+	</div>
 	<% if admin_signed_in? %>  
 	    	   <div class="col-md-1">      
 	    		  <%= link_to("Edit", edit_entry_path(@entry.id), class: 'btn btn-warning') %>
 	            </div>
 	<% end %>
-
 	<br>
 	<div class="col-md-4 offset-md-1">
 		<h5> Back to Category:</h5>

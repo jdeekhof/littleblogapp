@@ -57,6 +57,7 @@ body {
 
 
 .content{
+  max-width: 100%;
 	padding-top: 10px;
 	display: flex-grid;
 }
@@ -76,12 +77,6 @@ body {
 	padding: 0px;
 }
 
-.main nav{
-	border-bottom: solid;
-	
-}
-
-
 .menuToggler {
   display: inline-block;
   cursor: pointer;
@@ -90,7 +85,7 @@ body {
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 3px;
-  background-color: black;
+  background-color: white;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -126,4 +121,26 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: baseline;
+}
+.img-thumbnail{
+  width:100%;
+  max-width: 120px;
+}
+
+.bg-black {
+  background: black;
+}
+.show-entry{
+  display: block;
+}
+.text-wrap{
+  text-align: justify;
+  float: right;
+  margin: 10px;
+}
+.entry-image{
+  float: left;
+  max-width: 40%;
+  margin: 0 20px 20px 0;
 }

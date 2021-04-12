@@ -1,5 +1,4 @@
-class EntriesController < ApplicationController
-	
+class EntriesController < ApplicationController	
 	def index
 		@entries = Entry.order(date: :desc).entry_tagged_with(params[:tag]).paginate(page: params[:page], per_page: 5)
 	end
