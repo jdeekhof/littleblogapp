@@ -77,30 +77,41 @@
       </div>
 
   <script type="text/javascript">
-    function openNav() {
+    window.onload = initializeSideNav()
+    
+    function initializeSideNav() {
+      if (window.localStorage.sideNavState == null) {
+        console.log("hi")
+        setNav("250px")
+        localStorage.setItem("sideNavState", "250px")
+      }
+      else {
+        setNav(window.localStorage.sideNavState)
+        console.log("bye")
+      }
+    }
+
+    function setNav(s) {
       nav =  document.getElementById('mySideNav')
       main = document.getElementById('main')
-      nav.style.width = "250px";
-      main.style.marginLeft = "250px";
+      nav.style.width = s
+      main.style.marginLeft = s
     }
-    function closeNav() {
-      nav =  document.getElementById('mySideNav')
-      main = document.getElementById('main')
-      nav.style.width = "0";
-      main.style.marginLeft = "0";
-    }
+  
     function iconAnimate(x) {
-        
-        if (x.classList.length > 1){
+        if (window.localStorage.sideNavState == "250px"){
           x.classList.toggle("open");
-          console.log("close nav");
-          closeNav()
+          localStorage.setItem("sideNavState", 0)
+          setNav(window.localStorage.sideNavState)
+          console.log(window.localStorage.sideNavState)
         }
         else{
-        x.classList.toggle("open");
-        console.log("open nav");
-        openNav() 
-      }}
+          x.classList.toggle("open")
+          localStorage.setItem("sideNavState", "250px")
+          setNav(window.localStorage.sideNavState)
+          console.log(window.localStorage.sideNavState)
+        }
+    }
 
   </script>
   </body>
